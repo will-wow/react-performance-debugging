@@ -1,16 +1,19 @@
 import React from "react";
-import { range } from "lodash";
+import { range, sum } from "lodash";
 
 import Header from "./Header";
 
 const BIG_RANGE = range(0, 100);
 
-const Grid = ({ number }) => {
+const MultiGrid = ({ numbers }) => {
   const bigRange = BIG_RANGE;
+  const number = sum(numbers);
+
+  console.log(numbers.join());
 
   return (
     <div>
-      <Header text={`Grid + ${number}`} />
+      <Header text={`Grid + ${numbers.join(" + ")}`} />
       <div className="grid__body">
         {bigRange.map(m => (
           <div key={m}>
@@ -24,5 +27,5 @@ const Grid = ({ number }) => {
   );
 };
 
-export default React.memo(Grid);
-// export default Grid;
+export default React.memo(MultiGrid);
+// export default MultiGrid;

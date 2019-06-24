@@ -9,9 +9,16 @@ class NumberForm extends React.Component {
     this.state = {
       name: "A Bunch of Numbers",
       firstNumber: 0,
-      secondNumber: 0
+      secondNumber: 0,
+      numbers: [0, 0]
     };
   }
+
+  setNumbers = () => {
+    const { firstNumber, secondNumber } = this.state;
+
+    this.setState({ numbers: [firstNumber, secondNumber] });
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -21,17 +28,15 @@ class NumberForm extends React.Component {
   handleNumberChange = event => {
     const { name, value } = event.target;
     const number = value ? parseInt(value) : 0;
-    this.setState({ [name]: number });
+    this.setState({ [name]: number }, this.setNumbers);
   };
 
   render() {
-    const { name, firstNumber, secondNumber } = this.state;
-
-    const numbers = [firstNumber, secondNumber];
+    const { name, firstNumber, secondNumber, numbers } = this.state;
 
     return (
       <div>
-        <div className="inputs">
+        <div style={{ display: "flex" }}>
           <label>
             Name
             <input name="name" value={name} type="text" onChange={this.handleChange} />
