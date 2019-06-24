@@ -1,12 +1,6 @@
-# Shallow-Testing React 16
+# React Performance Debugging
 
-Sample code for a blog post about testing Contexts and Hooks with `enzyme.shallow`.
-
-## Example Tests
-
-- [Hook Test](/src/UserProfile.test.js)
-- [Simple Context Test](/src/UserGreeting.test.js)
-- [Stateful Context Test](/src/UserGreeter.test.js)
+WIP: Sample code for a blog post about the React perfomance tools
 
 ## Available Scripts
 
