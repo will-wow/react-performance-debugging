@@ -8,5 +8,19 @@
 
 .inputs {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.inputs label {
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fixed {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem;
 }

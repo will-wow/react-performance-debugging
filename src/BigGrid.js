@@ -5,20 +5,19 @@ import Header from "./Header";
 
 const BIG_RANGE = range(0, 100);
 
-const MultiGrid = ({ numbers }) => {
+const BigGrid = ({ number, numbers }) => {
   const bigRange = BIG_RANGE;
-  const number = sum(numbers);
-
-  console.log(numbers.join());
+  numbers = numbers || [number];
+  number = sum(numbers);
 
   return (
     <div>
-      <Header text={`Grid + ${numbers.join(" + ")}`} />
+      <Header text={`BigGrid + ${numbers.join(" + ")}`} />
       <div className="grid__body">
         {bigRange.map(m => (
           <div key={m}>
             {bigRange.map(n => (
-              <span key={n}>{n + number}</span>
+              <span key={n}>{(n + number) % 9}</span>
             ))}
           </div>
         ))}
@@ -27,5 +26,5 @@ const MultiGrid = ({ numbers }) => {
   );
 };
 
-export default React.memo(MultiGrid);
-// export default MultiGrid;
+// export default React.memo(BigGrid);
+export default BigGrid;
