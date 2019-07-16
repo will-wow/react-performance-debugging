@@ -22,9 +22,6 @@ const NumberForm = () => {
     setFormData({ ...formData, [name]: number });
   };
 
-  const numbers = [firstNumber, secondNumber];
-  // const numbers = React.useMemo(() => [firstNumber, secondNumber], [firstNumber, secondNumber]);
-
   return (
     <div>
       <div className="fixed">
@@ -49,7 +46,6 @@ const NumberForm = () => {
       </div>
 
       <BigGrid number={firstNumber + secondNumber} />
-      <BigGrid numbers={numbers} />
     </div>
   );
 };

@@ -26,5 +26,4 @@ const BigGrid = ({ number, numbers }) => {
   );
 };
 
-// export default React.memo(BigGrid);
 export default BigGrid;
